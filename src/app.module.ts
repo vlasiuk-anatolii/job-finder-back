@@ -12,9 +12,7 @@ import { HealthController } from './health.controller';
       imports: [ConfigModule],
       useFactory: (config: ConfigService) => {
         return {
-          uri: `${config.get('MONGODB_URI')}/${config.get('MONGODB_NAME')}?directConnection=true`,
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
+          uri: `${config.get('MONGODB_URI')}`,
         };
       },
       inject: [ConfigService],
